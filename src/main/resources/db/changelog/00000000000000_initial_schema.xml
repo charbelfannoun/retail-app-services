@@ -1,0 +1,58 @@
+<databaseChangeLog
+xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+
+<property name="now" value="now()" dbms="h2"/>
+
+<changeSet id="00000000000000" author="cfannoun" dbms="h2">
+
+    <createTable tableName="CUSTOMER"
+                 remarks="A table to contain all the retail customers">
+        <column name="id" type="bigint">
+            <constraints nullable="false" primaryKey="true"/>
+        </column>
+        <column name="first_name"     type="varchar(50)"/>
+        <column name="last_name"      type="varchar(50)"/>
+        <column name="created_date"   type="date" defaultValueDate="${now}"/>
+        <column name="discount_type"  type="varchar(20)"/>
+    </createTable>
+
+    <createTable tableName="PURCHASE_ORDER"
+                 remarks="A table to contain all customer purchase orders">
+        <column name="id" type="bigint">
+            <constraints nullable="false" primaryKey="true"/>
+        </column>
+        <column name="order_name"     type="varchar(50)"/>
+        <column name="purchase_date"   type="date" defaultValueDate="${now}"/>
+        <column name="customer_id"    type="bigint"/>
+    </createTable>
+
+    <addForeignKeyConstraint baseColumnNames="customer_id"
+                             baseTableName="PURCHASE_ORDER"
+                             constraintName="fk_purchase_customer_id"
+                             referencedColumnNames="id"
+                             referencedTableName="CUSTOMER"/>
+
+
+    <createTable tableName="ITEM"
+                 remarks="A table to contain all retail Store items">
+        <column name="id" type="bigint">
+            <constraints nullable="false" primaryKey="true"/>
+        </column>
+        <column name="item_name"          type="varchar(50)"/>
+        <column name="item_type"           type="varchar(50)"/>
+        <column name="item_price"         type="decimal" />
+        <column name="purchase_order_id"  type="bigint"/>
+    </createTable>
+
+    <addForeignKeyConstraint baseColumnNames="purchase_order_id"
+                             baseTableName="ITEM"
+                             constraintName="fk_item_purchase_order_id"
+                             referencedColumnNames="id"
+                             referencedTableName="PURCHASE_ORDER"/>
+
+
+</changeSet>
+</databaseChangeLog>
