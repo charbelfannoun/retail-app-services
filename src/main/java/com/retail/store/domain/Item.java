@@ -21,6 +21,7 @@ public class Item extends Identity
     private String itemName;
 
     @Column(name = "item_type")
+    @Enumerated(EnumType.STRING)
     private ItemType itemType;
 
     @Column(name = "item_price")

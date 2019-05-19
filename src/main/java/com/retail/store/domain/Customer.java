@@ -16,7 +16,6 @@ import java.util.Set;
 @NoArgsConstructor
 public class Customer extends Identity
 {
-
     @Column(name = "first_name")
     private String firstName;
 
@@ -26,10 +25,24 @@ public class Customer extends Identity
     @Column(name = "created_date")
     private LocalDateTime createdDate;
 
-    @Column(name = "discount_type")
+    @Column(name = "customer_type")
+    @Enumerated(EnumType.STRING)
     private CustomerType customerType;
 
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL)
     private Set<PurchaseOrder> purchaseOrders;
+
+    /**
+     * Explicit Arguments constructor
+     * @param firstName
+     * @param lastName
+     * @param customerType
+     */
+    public Customer(String firstName, String lastName, CustomerType customerType)
+    {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.customerType = customerType;
+    }
 
 }

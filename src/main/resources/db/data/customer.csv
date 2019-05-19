@@ -1,4 +1,4 @@
-id;first_name;last_name;created_date;discount_type
+id;first_name;last_name;created_date;customer_type
 1;John;Employee;2019-05-19;EMPLOYEE
 2;Tom;Affiliate;2019-05-19;AFFILIATE
 3;Georges;"Customer With More Than 2 years";2016-05-19;CUSTOMER
