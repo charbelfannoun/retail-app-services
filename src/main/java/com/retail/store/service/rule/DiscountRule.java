@@ -9,29 +9,5 @@ import com.retail.store.dtos.CustomerDTO;
  */
 public  interface DiscountRule
 {
-     public static final Integer ZERO_DISCOUNT = 0;
-
      Integer calculateCustomerDiscount(CustomerDTO customer);
-
-    /**
-     * Customer Dicount Enumeration
-     */
-     enum DiscountType
-     {
-         EMPLOYEE_DISCOUNT(30),
-         AFFILIATE_DISCOUNT(10),
-         CUSTOMER_OVER_TWO_YEARS(5);
-
-         private final int percentage;
-
-         DiscountType(int percentage)
-         {
-           this.percentage = percentage;
-         }
-
-         int getPercentage()
-         {
-             return percentage;
-         }
-     }
 }
