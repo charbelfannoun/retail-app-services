@@ -74,7 +74,7 @@ public class CustomerService
     }
 
 
-    public PurchasingAmountDTO getPurhasedAmount(long customerId, long purchaseOrderId)
+    public PurchasingAmountDTO getPurshasedAmount(long customerId, long purchaseOrderId)
     throws BaseException
     {
         CustomerDTO customer = this.findById(customerId);

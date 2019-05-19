@@ -89,7 +89,7 @@ public class CustomerRestController
     public ResponseEntity<PurchasingAmountDTO> getAmountDetail(@PathVariable("customer-id") Long customerId,@PathVariable("order-id") Long orderId)
             throws BaseException
     {
-        PurchasingAmountDTO purchasingAmountDTO = this.customerService.getPurhasedAmount(customerId, orderId);
+        PurchasingAmountDTO purchasingAmountDTO = this.customerService.getPurshasedAmount(customerId, orderId);
         log.info("GET PURCHASE AMOUNT DETAIL-  detail found {}", customerId, purchasingAmountDTO);
         return new ResponseEntity<>(purchasingAmountDTO, HttpStatus.OK);
     }

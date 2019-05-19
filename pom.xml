@@ -24,7 +24,7 @@
 		<io.springfox-version>2.9.2</io.springfox-version>
 		<maven-surefire-plugin-version>3.0.0-M3</maven-surefire-plugin-version>
 		<org.jacoco-version>0.8.3</org.jacoco-version>
-		<sonar.coverage.exclusions>**/domain/**/*,**/config/*,**/model/*</sonar.coverage.exclusions>
+		<sonar.coverage.exclusions>**/domain/**/*,**/config/*,**/dtos/*</sonar.coverage.exclusions>
 	</properties>
 
 
@@ -135,6 +135,7 @@
 					</execution>
 				</executions>
 			</plugin>
+
 		</plugins>
 	</build>
 
