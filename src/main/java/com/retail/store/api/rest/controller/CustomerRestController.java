@@ -90,7 +90,7 @@ public class CustomerRestController
             throws BaseException
     {
         PurchasingAmountDTO purchasingAmountDTO = this.customerService.getPurshasedAmount(customerId, orderId);
-        log.info("GET PURCHASE AMOUNT DETAIL-  detail found {}", customerId, purchasingAmountDTO);
+        log.info("GET PURCHASE AMOUNT DETAIL-  detail found {}", purchasingAmountDTO);
         return new ResponseEntity<>(purchasingAmountDTO, HttpStatus.OK);
     }
 }

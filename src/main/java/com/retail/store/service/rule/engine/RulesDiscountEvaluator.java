@@ -26,7 +26,7 @@ public class RulesDiscountEvaluator
     private Set<DiscountRule> rules;
 
     @PostConstruct
-    public void RulesDiscountEvaluator()
+    public void setRulesDictiannory()
     {
         // Rules programmatic configuration
         this.rules = new LinkedHashSet<>();

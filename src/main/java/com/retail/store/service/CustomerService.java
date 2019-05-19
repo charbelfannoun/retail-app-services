@@ -83,7 +83,7 @@ public class CustomerService
 
         log.info("Customer with Id {} was found, Starting Amount discounst calculation.", customerId);
         PurchasingAmountDTO purchasingAmountDTO = this.purchaseAmountService.calculateNetTotalAmount(customer,purchaseOrder.getItems());
-        log.info("Customer with Id {} have a detailed purchase amount of ", customerId, purchasingAmountDTO);
+        log.info("Customer with Id {} have a detailed purchase amount of {}", customerId, purchasingAmountDTO);
         return purchasingAmountDTO;
     }
 }
