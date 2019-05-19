@@ -17,11 +17,11 @@ import java.util.Set;
 @Service
 public class PurchaseAmountService
 {
-    private Logger log = LoggerFactory.getLogger(PurchaseAmountService.class);
+    private final Logger log = LoggerFactory.getLogger(PurchaseAmountService.class);
 
     private static final BigDecimal HUNDRED = BigDecimal.valueOf(100);
     private static final BigDecimal SPENDING_OVER_100 = BigDecimal.valueOf(5);
-    private RulesDiscountEvaluator rulesEvaluator;
+    private final RulesDiscountEvaluator rulesEvaluator;
 
     @Autowired
     public PurchaseAmountService(RulesDiscountEvaluator rulesEvaluator)

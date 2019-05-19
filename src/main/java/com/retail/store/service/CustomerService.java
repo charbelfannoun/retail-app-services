@@ -24,9 +24,9 @@ public class CustomerService
     private static final String CUSTOMER_DOES_NOT_EXIST = "Customer with id %s does not exist.";
     private static final String PURCHASE_ORDER_DOES_NOT_EXIST = "Purchase order with id %s does not exist.";
 
-    private PurchaseAmountService purchaseAmountService;
-    private CustomerRepository customerRepository;
-    private PurchaseOrderRepository purchaseOrderRepository;
+    private final PurchaseAmountService purchaseAmountService;
+    private final CustomerRepository customerRepository;
+    private final PurchaseOrderRepository purchaseOrderRepository;
 
     @Autowired
     public CustomerService(PurchaseAmountService purchaseAmountService, CustomerRepository customerRepository,PurchaseOrderRepository purchaseOrderRepository)

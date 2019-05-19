@@ -28,7 +28,7 @@ import java.util.List;
 public class CustomerRestController
 {
     private static final Logger log = LoggerFactory.getLogger(CustomerRestController.class);
-    private CustomerService customerService;
+    private final CustomerService customerService;
 
     public CustomerRestController(CustomerService customerService)
     {

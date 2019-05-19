@@ -5,7 +5,6 @@ import com.retail.store.service.rule.AfiliateDiscountRule;
 import com.retail.store.service.rule.DiscountRule;
 import com.retail.store.service.rule.EmployeeDiscountRule;
 import com.retail.store.service.rule.TwoYearsDiscountRule;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.PostConstruct;

@@ -22,14 +22,14 @@ public  interface DiscountRule
          AFFILIATE_DISCOUNT(10),
          CUSTOMER_OVER_TWO_YEARS(5);
 
-         private int percentage;
+         private final int percentage;
 
          DiscountType(int percentage)
          {
            this.percentage = percentage;
          }
 
-         public int getPercentage()
+         int getPercentage()
          {
              return percentage;
          }
