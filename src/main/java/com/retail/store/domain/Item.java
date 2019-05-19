@@ -31,5 +31,10 @@ public class Item extends Identity
     @JoinColumn
     private PurchaseOrder purchaseOrder;
 
-
+    public Item(String itemName, ItemType itemType, BigDecimal itemPrice)
+    {
+        this.itemName = itemName;
+        this.itemType = itemType;
+        this.itemPrice = itemPrice;
+    }
 }
